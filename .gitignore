@@ -1,0 +1,5 @@
+/.idea
+/.git
+/public/application/cache/*
+!index.html
+!index.htm
