@@ -6,7 +6,7 @@
 </div>
 <div class="head">
     <div class="top">
-        <div class="top_logo"> <img src="style/admin_top_logo.gif" alt="DedeCms Logo" title="Welcome use DedeCms" height="37" width="170"> </div>
+        <div class="top_logo"> <img src="static/images/admin_top_logo.gif" alt="DedeCms Logo" title="Welcome use DedeCms" height="37" width="170"> </div>
         <div class="top_link">
             <ul>
                 <li class="welcome">您好：admin,欢迎登陆！</li>

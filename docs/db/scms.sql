@@ -167,10 +167,8 @@ CREATE TABLE `rk_uploads` (
   `height` char(10) NOT NULL DEFAULT '',
   `filesize` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `uptime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '入库时间',
-  PRIMARY KEY (`aid`),
-  KEY `memberid` (`mid`),
-  KEY `arcid` (`arcid`)
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`aid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 /*Data for the table `rk_uploads` */
 

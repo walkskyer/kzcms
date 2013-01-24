@@ -15,7 +15,7 @@ body {
 	z-index:1;
 }
 body.showmenu {
-	background:url(images/leftmenu_bg.gif) -10px top repeat-y;
+	background:url(../images/leftmenu_bg.gif) -10px top repeat-y;
 }
 body.hidemenu {
 	background:none;
@@ -33,7 +33,7 @@ ul {
 .top {
 	height:37px;
 	width:100%;
-	background:url(images/admin_top_bg.jpg) left top repeat-x;
+	background:url(../images/admin_top_bg.jpg) left top repeat-x;
 	overflow:hidden;
 	clear:both;
 }
@@ -88,24 +88,24 @@ ul {
 }
 .top .top_link .quick a.ac_qucikmenu {
 	width:81px;
-	background:url(images/quick_bg.gif) left top no-repeat;
+	background:url(../images/quick_bg.gif) left top no-repeat;
 	letter-spacing:1px;
 	text-indent:8px;
 }
 .top .top_link .quick a.ac_qucikmenu:hover {
-	background:url(images/quick_bg.gif) left bottom no-repeat;
+	background:url(../images/quick_bg.gif) left bottom no-repeat;
 }
 .top .top_link .quick a.ac_qucikadd {
 	width:19px;
-	background:url(images/quick_bg.gif) right top no-repeat;
+	background:url(../images/quick_bg.gif) right top no-repeat;
 }
 .top .top_link .quick a.ac_qucikadd:hover {
-	background:url(images/quick_bg.gif) right bottom no-repeat;
+	background:url(../images/quick_bg.gif) right bottom no-repeat;
 }
 .topnav {
 	width:100%;
 	height:29px;
-	background:url(images/admin_top_bg.jpg) left -37px repeat-x;
+	background:url(../images/admin_top_bg.jpg) left -37px repeat-x;
 	overflow:hidden;
 	clear:both;
 }
@@ -182,7 +182,7 @@ body.hidemenu .left {
 	letter-spacing:2px;
 	color:#859E69;
 	display:block;
-	background-image:url(images/leftmenu_dt_bg.gif);
+	background-image:url(../images/leftmenu_dt_bg.gif);
 	background-repeat:no-repeat;
 	background-position:left bottom;
 	margin-right:1px;
@@ -215,12 +215,12 @@ body.hidemenu .left {
 }
 .menu dl dd ul li a:hover {
 	color:#5E8E0C;
-	background:url(images/leftmenu_li_on.gif) right 3px no-repeat;
+	background:url(../images/leftmenu_li_on.gif) right 3px no-repeat;
 }
 .menu dl dd ul li a.thisclass, .menu dl dd ul li a.thisclass:hover {
 	color:#5E8E0C;
 	font-weight:bold;
-	background:url(images/leftmenu_li_s.gif) right 3px no-repeat;
+	background:url(../images/leftmenu_li_s.gif) right 3px no-repeat;
 }
 body.showmenu .right {
 	left:158px;
