@@ -195,4 +195,9 @@ class MY_Model extends CI_Model
         }
         return false;
     }
+
+    /**
+     * 处理输入数据用于存储
+     */
+    public function toValue(){}
 }
