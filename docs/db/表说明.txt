@@ -1,0 +1,7 @@
+文章类表  rk_addonarticle
+栏目类表  rk_arctype
+管理员表  rk_admin
+网上留言（表单） rk_forms
+链接表    rk_link
+单页文档表 rk_sgpage 
+系统配置  rk_sysconfig
