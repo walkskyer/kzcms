@@ -54,165 +54,145 @@ class MY_Model extends CI_Model
     protected $_tableName = '';
     public $where = array();
     public $total_rows = 0;
-    protected $_pre='';
+    protected $_pre = 'rk_';
 
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
     }
-    public function getTable(){
-        if(!empty($this->_tableName)){
-            return $this->_pre.$this->_tableName;
+
+    /**
+     * 取得表名
+     * @return bool|string
+     */
+    public function getTable()
+    {
+        if (!empty($this->_tableName)) {
+            return $this->_pre . $this->_tableName;
         }
         return false;
     }
+
+    /**
+     * 设置查询条件
+     * @param bool $where
+     */
     public function where($where = false)
     {
         if ($where) {
             $this->where = $where;
         }
-
         if ($this->where) {
             if (is_array($this->where)) {
                 foreach ($this->where as $key => $value) {
-                    switch ($key) {
-                        case 'txtKeyWords':
-                            $this->db->like('username', $value);
-                            break;
-
-                        default:
-                            $this->db->where($key,$value);
-                            break;
-                    }
+                    $this->db->where($key, $value);
                 }
             }
-
             if (is_string($this->where)) {
                 $this->db->where($where);
             }
         }
     }
 
-
-
-    public function fetchRows($where = '',$limit = 20,$offset = 0, $order = 'pkey DESC')
+    /**
+     * 返回查询结果的对象数组
+     * @param string $where
+     * @param int $limit
+     * @param int $offset
+     * @param string $order
+     * @return array
+     */
+    public function fetchRows($where = '', $limit = 20, $offset = 0, $order = 'pkey DESC')
     {
         $this->count_all_results($where);
 
         if ($this->total_rows) {
-
             $this->db->select('*');
-            $this->db->from($this->_tableName);
-
+            $this->db->from($this->getTable());
             $this->where();
-
             $this->db->order_by($order);
-
-            $this->db->limit($limit,$offset);
-
+            $this->db->limit($limit, $offset);
             $query = $this->db->get();
-
-            return $query->result() ;
+            return $query->result();
         }
         return array();
     }
 
-
+    /**
+     * 取得一个查询结果
+     * @param string $where
+     * @return bool| MY_Model
+     */
     public function fetchRow($where = '')
     {
-
         $this->db->select('*');
-        $this->db->from($this->_tableName);
-
+        $this->db->from($this->getTable());
         $this->where($where);
-
         $this->db->limit(1);
-
         $query = $this->db->get();
-
-        $rows = $query->result() ;
-
+        $rows = $query->result();
         if ($rows) {
             return $rows[0];
         }
-
         return false;
     }
 
-    function count_all_results($where = false){
+    /**
+     * 统计查询结果数目
+     * @param bool $where
+     * @return string
+     */
+    function count_all_results($where = false)
+    {
         $this->where($where);
-        $this->total_rows = $this->db->count_all_results($this->_tableName);
+        $this->total_rows = $this->db->count_all_results($this->getTable());
         return $this->total_rows;
     }
 
-    public function insert($value='')
+    /**
+     * 插入数据
+     * @param string $value
+     * @return bool|object
+     */
+    public function insert($value = '')
     {
         if ($value) {
-
-            $pkey = $this->db->insert($this->_tableName, $value);
-
-            return $pkey;
-        }
-
-        return false;
-    }
-    public function isValid($username, $password)
-    {
-
-        $query = $this->db->get_where($this->_tableName,array('userid'=>$username));
-
-        foreach ($query->result() as $row)
-        {
-            if ($row->password == $password) {
-                return true;
+            $flag = $this->db->insert($this->getTable(), $value);
+            if($flag){
+                return $this->db->insert_id();
             }
-            break;
         }
-
         return false;
     }
 
-
-    public function update($value='',$pkey)
+    /**
+     * 更新数据
+     * @param string $value
+     * @param $pkey
+     * @return bool|object
+     */
+    public function update($value = '', $where)
     {
-        if ($value && $pkey) {
-
-            $pkey = $this->db->update($this->_tableName, $value,array('pkey'=>$pkey));
-
-            return $pkey;
+        if ($value && $where) {
+            $this->where($where);
+            $flag = $this->db->update($this->getTable(), $value);
+            return $flag;
         }
-
         return false;
     }
-    public function delete($pkey='')
+
+    /**
+     * 删除数据
+     * @param string $pkey
+     * @return bool|object
+     */
+    public function delete($where = '')
     {
-        if ($pkey) {
-
-            $result = $this->db->delete($this->_tableName, array('pkey'=>$pkey));
-
+        if ($where) {
+            $this->where($where);
+            $result = $this->db->delete($this->getTable());
             return $result;
         }
-
-        return false;
-    }
-
-    public function fetchRowArr($where = '')
-    {
-
-        $this->db->select('*');
-        $this->db->from($this->_tableName);
-
-        $this->where($where);
-
-        $this->db->limit(1);
-
-        $query = $this->db->get();
-
-        $rows = $query->result_array() ;
-
-        if ($rows) {
-            return $rows[0];
-        }
-
         return false;
     }
 }
