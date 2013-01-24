@@ -183,7 +183,7 @@ class MY_Model extends CI_Model
 
     /**
      * 删除数据
-     * @param string $pkey
+     * @param  array $value
      * @return bool|object
      */
     public function delete($where = '')
