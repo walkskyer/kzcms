@@ -51,6 +51,7 @@
  */
 class MY_Controller extends CI_Controller
 {
+    public $_AdminPath = 'manage/';
     public function __construct(){
         parent::__construct();
     }

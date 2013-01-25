@@ -1,3 +1,10 @@
+<script src="static/js/frame.js" language="javascript" type="text/javascript"></script>
+<link href="static/css/frame.css" rel="stylesheet" type="text/css">
+<!--[if IE]>
+<style type="text/css" media="screen">
+    .right{height:100%; top:0; bottom:0; border-top:66px solid #d0e6f1; border-bottom:0px solid #d0e6f1; z-index:1;}
+</style>
+<![endif]-->
 <div class="pagemask"></div>
 <iframe class="iframemask"></iframe>
 <div class="allmenu">
@@ -62,7 +69,7 @@
 </div>
 <div class="right">
     <div class="main">
-        <iframe id="main" name="main" src="bb.html" frameborder="0"></iframe>
+        <iframe id="main" name="main" src="<?php echo site_url('/manage/admin/indexmain')?>" frameborder="0"></iframe>
     </div>
 </div>
 <div class="qucikmenu" id="qucikmenu">

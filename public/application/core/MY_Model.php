@@ -102,7 +102,7 @@ class MY_Model extends CI_Model
      * @param string $order
      * @return array
      */
-    public function fetchRows($where = '', $limit = 20, $offset = 0, $order = 'pkey DESC')
+    public function fetchRows($where = '', $limit = 20, $offset = 0, $order = 'aid DESC')
     {
         $this->count_all_results($where);
 

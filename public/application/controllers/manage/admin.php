@@ -1,4 +1,5 @@
 <?php
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * Created by JetBrains PhpStorm.
  * User: Administrator
@@ -12,9 +13,15 @@ class admin extends  MY_Controller
     public  function index(){
 
         $this->_data['menuList']= $this->menuList();
-        $this->load->view("manage/head",$this->_data);
-        $this->load->view("manage/body");
-        $this->load->view("manage/foot");
+        $this->load->view($this->_AdminPath."head",$this->_data);
+        $this->load->view($this->_AdminPath."body");
+        $this->load->view($this->_AdminPath."foot");
+    }
+
+    public  function indexmain(){
+        $this->load->view($this->_AdminPath."head");
+        $this->load->view($this->_AdminPath."index");
+        $this->load->view($this->_AdminPath."foot");
     }
 
 }
