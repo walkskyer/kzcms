@@ -55,51 +55,13 @@ class MY_Controller extends CI_Controller
     public function __construct(){
         parent::__construct();
     }
-    /*
-     * 返回后台menu相关数组
+
+    /**
+     * 渲染视图
+     * @param string $template
+     * @param array $data
      */
-    public  function menuList(){
-        $data = array(
-            array(
-               'itemname'=>'常用操作',
-               'class'=>'thisclass',
-                '_for'=>'common',
-                'href'=>'',
-                'display'=>"block",
-                'childs'=>array(
-                    array('url'=>'','name'=>'网站设置'),
-                    array('url'=>'','name'=>'网站设置'),
-                )
-
-            ),
-            array(
-                'itemname'=>'内容管理',
-                'class'=>'',
-                '_for'=>'content',
-                'href'=>'',
-                'display'=>"none",
-                'childs'=>array(
-                    array('url'=>'','name'=>'网站设置'),
-                    array('url'=>'','name'=>'网站设置'),
-                )
-
-            ),
-            array(
-                'itemname'=>'产品管理',
-                'class'=>'',
-                '_for'=>'product',
-                'href'=>'',
-                'display'=>"none",
-                'childs'=>array(
-                    array('url'=>'','name'=>'网站设置'),
-                    array('url'=>'','name'=>'网站设置'),
-                )
-
-            )
-
-        );
-
-        return $data;
+    public function render($template,array $data=array()){
+        $this->load->view('layout',array('content'=>$this->load->view($template,$data,true)));
     }
-
 }
