@@ -168,7 +168,7 @@ class MY_Model extends CI_Model
     /**
      * 更新数据
      * @param string $value
-     * @param $pkey
+     * @param $where
      * @return bool|object
      */
     public function update($value = '', $where)
@@ -183,7 +183,7 @@ class MY_Model extends CI_Model
 
     /**
      * 删除数据
-     * @param  array $value
+     * @param  array|string $where
      * @return bool|object
      */
     public function delete($where = '')
