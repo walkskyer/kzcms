@@ -55,6 +55,11 @@ class MY_Controller extends CI_Controller
         parent::__construct();
     }
 
+    /**
+     * 渲染视图
+     * @param string $template
+     * @param array $data
+     */
     public function render($template,array $data=array()){
         $this->load->view('layout',array('content'=>$this->load->view($template,$data,true)));
     }
