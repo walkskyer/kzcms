@@ -8,8 +8,11 @@
  */
 class admin extends  MY_Controller
 {
+    private $_data = array();
     public  function index(){
-        $this->load->view("manage/head");
+
+        $this->_data['menuList']= $this->menuList();
+        $this->load->view("manage/head",$this->_data);
         $this->load->view("manage/body");
         $this->load->view("manage/foot");
     }

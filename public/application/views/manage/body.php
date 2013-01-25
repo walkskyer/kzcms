@@ -27,50 +27,37 @@
         </div>
         <div class="nav" id="nav">
             <ul>
-                <li><a class="" href="dd.html" _for="common" target="main">系统设置</a></li>
-                <li><a class="" href="aa.html" _for="content" target="main">内容管理</a></li>
-                <li><a class="" href="bb.html" _for="plugins" target="main">系统插件</a></li>
-                <li><a class="" href="cc.html" _for="updatehtml" target="main">HTML更新</a></li>
-                <li><a class="" href="dd.html" _for="template" target="main">模板管理</a></li>
-                <li><a class="" href="http://127.0.0.1:90/dede/member_main.php" _for="member" target="main">会员管理</a></li>
-                <li><a class="thisclass" href="http://127.0.0.1:90/dede/sys_info.php" _for="system" target="main">系统设置</a></li>
+                <?php
+                    foreach($menuList as $v){
+                        echo  ' <li><a class="" href="'.$v['href'].'" _for="'.$v['_for'].'" target="main">'.$v['itemname'].'</a></li>';
+                    }
+                ?>
             </ul>
         </div>
     </div>
 </div>
-<!--<div class="left">
-  <div class="menu" id="menu">
-    <iframe src="index_menu.php" id="menufra" name="menu" frameborder="0"></iframe>
-  </div>
-</div> -->
+
 <div class="left">
     <div class="menu" id="menu">
-        <div style="display:block;" id="items_common">
-            <!-- Item 2 Strat -->
-            <dl id="dl_items_1_1">
-                <dt>常用操作</dt>
-                <dd><ul>
-                    <li><a class="" href="bb.html" target="main">管理首页</a></li>
-                    <li><a class="" href="aa.html" target="main">网站栏目管理</a></li>
-                    <li><a class="" href="cc.html" target="main">订单管理</a></li>
-                    <li><a class="" href="dd.html" target="main">人才招聘管理</a></li>
-                </ul></dd>
-            </dl>
-            <!-- Item 2 End -->
-        </div>
-        <div style="display:none;" id="items_content">
-            <!-- Item 2 Strat -->
-            <dl id="dl_items_1_2">
-                <dt>内容管理</dt>
-                <dd><ul>
-                    <li><a class="" href="bb.html" target="main">新闻中心</a></li>
-                    <li><a class="" href="aa.html" target="main">产品中心</a></li>
-                    <li><a class="" href="cc.html" target="main">订单管理</a></li>
-                    <li><a class="" href="dd.html" target="main">文章列表</a></li>
-                </ul></dd>
-            </dl>
-            <!-- Item 2 End -->
-        </div>
+        <?php
+          $i=0;
+          foreach($menuList as $value){ $i++;
+              ?>
+                  <div style="display:<?php echo $value['display']?>;" id="items_<?php echo $value['_for']?>">
+                      <dl id="dl_items_1_<?php echo $i;?>">
+                          <dt><?php echo $value['itemname'];?></dt>
+                          <dd><ul>
+                              <?php   foreach($value['childs'] as $child){
+
+                                echo '<li><a class="" href="'.$child['url'].'" target="main">'.$child['name'].'</a></li>';
+
+                               } ?>
+                          </ul></dd>
+                      </dl>
+                      <!-- Item 2 End -->
+                  </div>
+           <?php   }?>
+
     </div>
 </div>
 <div class="right">
