@@ -13,21 +13,38 @@ class sysconfig extends  MY_Controller{
 
     }
     public   function infolist(){
-        $this->load->library('pagination');
-        $pagination['base_url'] = site_url('manage/sysconfig/infolist/page');
-        $pagination['total_rows'] = $this->model->count_all_results();
-        $pagination['per_page'] = 10;
-        $pagination['uri_segment'] = 5;
-        $offset = $this->uri->segment(5);
-        echo $offset;
-        $this->pagination->initialize($pagination);
-        $this->_data['links'] = $this->pagination->create_links();
-        $this->_data['infolist'] = $this->model->fetchRows('',$pagination['per_page'],$offset);
+        if($this->input->post()){
+            $aidArray = $this->input->post('aid');
+            $valArray = $this->input->post('val');
+            foreach($aidArray as $key=>$aid){
+               $where['aid'] = $aid;
+               $this->model->update(array('value'=>$valArray[$key]),$where);
+               // echo $this->db->last_query();
+            }
+
+            $this->_data['msg']='更新成功';
+        }
+        $this->_data['infolist'] = $this->model->fetchRows();
         $this->load->view($this->_AdminPath."head",$this->_data);
         $this->load->view($this->_viewPath.'infolist');
         $this->load->view($this->_AdminPath."foot");
 
 
+    }
+    public  function add(){
+        if($this->input->post()){
+            $in=array(
+                'varname'=>trim($this->input->post('varname')),
+                'info'=>trim($this->input->post('info')),
+                'type'=>$this->input->post('type'),
+                'value'=>$this->input->post('value'),
+            );
+            $this->model->insert($in);
+            $this->_data['msg']='添加成功!';
+        }
+        $this->load->view($this->_AdminPath."head",$this->_data);
+        $this->load->view($this->_viewPath.'add');
+        $this->load->view($this->_AdminPath."foot");
     }
 
 }

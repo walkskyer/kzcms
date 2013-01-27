@@ -11,4 +11,21 @@ class Sysconfig_model extends MY_Model{
         parent::__construct();
         $this->_tableName='sysconfig';
     }
+    public function fetchRows($where = '', $limit = 20, $offset = 0, $order = 'aid DESC')
+    {
+        $this->count_all_results($where);
+
+        if ($this->total_rows) {
+            $this->db->select('*');
+            $this->db->from($this->getTable());
+          //  $this->where($where);
+            $this->db->order_by($order);
+          //  $this->db->limit($limit, $offset);
+            $query = $this->db->get();
+            return $query->result();
+        }
+        return array();
+    }
+
+
 }

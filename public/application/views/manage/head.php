@@ -3,7 +3,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>企业信息管理系统</title>
     <base href="<?php echo base_url(); ?>">
+    <link type="text/css" rel="stylesheet" href="static/css/table.css">
     <script src="static/js/jquery/jquery.js" language="javascript" type="text/javascript"></script>
+    <script src="static/js/manage.js" language="javascript" type="text/javascript"></script>
 </head>
 <body>
 

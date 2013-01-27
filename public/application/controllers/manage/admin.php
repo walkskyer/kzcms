@@ -38,7 +38,7 @@ class admin extends MY_Controller
                 'href' => '',
                 'display' => "block",
                 'childs' => array(
-                    array('url' => '', 'name' => '网站设置'),
+                    array('url' => site_url('manage/sysconfig/infolist'), 'name' => '网站设置'),
                     array('url' => '', 'name' => '网站设置'),
                 )
             ),
