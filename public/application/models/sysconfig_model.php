@@ -26,6 +26,24 @@ class Sysconfig_model extends MY_Model{
         }
         return array();
     }
+    //将系统变量写入文件
+    public   function writeFile(){
+        $filename="defined.php";
+        if(is_writeable(WEBPATH.'/'.$filename)){
+            $data =$this->fetchRows();
+            $content="<?php  \n";
+            foreach($data as $key){
+               $content .="define('".strtoupper($key->varname)."','".$key->value."');\n";
+            }
+
+            $content.=" ?>";
+            $handle =fopen(WEBPATH.'/'.$filename,'w+');
+            fwrite($handle,$content);
+            fclose($handle);
+        }
+
+    }
+
 
 
 }

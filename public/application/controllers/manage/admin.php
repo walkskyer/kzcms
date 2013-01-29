@@ -39,7 +39,9 @@ class admin extends MY_Controller
                 'display' => "block",
                 'childs' => array(
                     array('url' => site_url('manage/sysconfig/infolist'), 'name' => '网站设置'),
-                    array('url' => '', 'name' => '网站设置'),
+                    array('url' => '', 'name' => '文章列表'),
+                    array('url' => '', 'name' => '产品列表'),
+                    array('url' => '', 'name' => '用户管理'),
                 )
             ),
             array(

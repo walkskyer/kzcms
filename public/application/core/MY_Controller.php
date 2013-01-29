@@ -54,6 +54,7 @@ class MY_Controller extends CI_Controller
     public $_AdminPath = 'manage/';
     public function __construct(){
         parent::__construct();
+      //  $this->config->load('config_string');//载入系统配置字符串
     }
 
     /**

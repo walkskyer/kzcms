@@ -21,7 +21,7 @@ class sysconfig extends  MY_Controller{
                $this->model->update(array('value'=>$valArray[$key]),$where);
                // echo $this->db->last_query();
             }
-
+            $this->model->writeFile();
             $this->_data['msg']='更新成功';
         }
         $this->_data['infolist'] = $this->model->fetchRows();
@@ -40,6 +40,7 @@ class sysconfig extends  MY_Controller{
                 'value'=>$this->input->post('value'),
             );
             $this->model->insert($in);
+            $this->model->writeFile();
             $this->_data['msg']='添加成功!';
         }
         $this->load->view($this->_AdminPath."head",$this->_data);

@@ -175,7 +175,8 @@ if (defined('ENVIRONMENT'))
 	// Name of the "system folder"
 	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 
-
+   //web根目录
+    define('WEBPATH',str_replace('\\','/',dirname(__FILE__)));
 	// The path to the "application" folder
 	if (is_dir($application_folder))
 	{
@@ -199,6 +200,7 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
+require_once WEBPATH.'/defined.php';
 require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */
