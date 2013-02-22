@@ -12,7 +12,8 @@ class admin extends MY_Controller
     private $_data = array();
 
    public function index(){
-        $this->_data['menuList']= $this->menuList();
+
+       $this->_data['menuList']= $this->menuList();
         $this->load->view($this->_AdminPath."head",$this->_data);
         $this->load->view($this->_AdminPath."body");
         $this->load->view($this->_AdminPath."foot");

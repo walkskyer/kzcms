@@ -1,6 +1,5 @@
-<h3>添加新变量</h3>
-    <form method="post" onsubmit="return chkfrm()">
-        <table>
+<form method="post" onsubmit="return chkfrm()">
+        <table class="content_tab">
             <tr>
                 <td class="center">变量名称</td>
                 <td class="indent"><input type="text" name="varname" id="varname">&nbsp;<span class="note">EX:cfg_name</span></td>
@@ -17,8 +16,8 @@
             </tr>
         </table>
         <p align="center">
-            <input type="submit"  value="保存变量">&nbsp;
-            <input type="button"  value="返回" onclick="skip('<?php echo site_url('manage/sysconfig/infolist')?>')">
+            <input type="submit"  value="保存变量" class="btn">&nbsp;
+            <input type="button"  value="返回" class="btn" onclick="skip('<?php echo site_url(CFG_CMSPATH.'sysconfig/infolist')?>')">
         </p>
     </form>
  <script type="text/javascript">

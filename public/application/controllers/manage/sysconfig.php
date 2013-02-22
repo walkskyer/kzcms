@@ -25,10 +25,8 @@ class sysconfig extends  MY_Controller{
             $this->_data['msg']='更新成功';
         }
         $this->_data['infolist'] = $this->model->fetchRows();
-        $this->load->view($this->_AdminPath."head",$this->_data);
-        $this->load->view($this->_viewPath.'infolist');
-        $this->load->view($this->_AdminPath."foot");
-
+        $this->_data['mtitle'] = '网站变量设置';
+        $this->render($this->_viewPath.'infolist',$this->_data);
 
     }
     public  function add(){
@@ -43,9 +41,8 @@ class sysconfig extends  MY_Controller{
             $this->model->writeFile();
             $this->_data['msg']='添加成功!';
         }
-        $this->load->view($this->_AdminPath."head",$this->_data);
-        $this->load->view($this->_viewPath.'add');
-        $this->load->view($this->_AdminPath."foot");
+        $this->_data['mtitle'] = '添加新变量';
+        $this->render($this->_viewPath.'add',$this->_data);
     }
 
 }

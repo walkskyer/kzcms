@@ -51,7 +51,7 @@
  */
 class MY_Controller extends CI_Controller
 {
-    public $_AdminPath = 'manage/';
+    public $_AdminPath = CFG_CMSPATH;
     public function __construct(){
         parent::__construct();
       //  $this->config->load('config_string');//载入系统配置字符串
@@ -62,7 +62,9 @@ class MY_Controller extends CI_Controller
      * @param string $template
      * @param array $data
      */
-    public function render($template,array $data=array()){
-        $this->load->view('layout',array('content'=>$this->load->view($template,$data,true)));
+    public function render($template, $data=array()){
+        $this->load->view('manage/layout',
+            array('content'=>$this->load->view($template,$data,true))
+        );
     }
 }

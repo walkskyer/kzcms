@@ -6,5 +6,5 @@ define('CFG_WEBNAME','/Dede1');
 define('CFG_INDEXNAME','EwQOa4337U1');
 define('CFG_INDEXURL','主页1');
 define('CFG_COOKIE_ENCODE','我的网站1');
-define('CFG_CMSPATH','admin@dedecms.com1');
+define('CFG_CMSPATH','manage/');
  ?>
