@@ -36,8 +36,8 @@ class CI_Pagination {
 	var $cur_page			=  0; // The current page being viewed
 	var $use_page_numbers	= FALSE; // Use page number for segment instead of offset
 	var $first_link			= '&lsaquo; First';
-	var $next_link			= '&gt;';
-	var $prev_link			= '&lt;';
+	var $next_link			= '下一页';
+	var $prev_link			= '上一页';
 	var $last_link			= 'Last &rsaquo;';
 	var $uri_segment		= 3;
 	var $full_tag_open		= '';

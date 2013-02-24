@@ -29,3 +29,54 @@
     .content_tab .txt{ width: 400px;}
      h3{ text-indent: 2em; color: #4169e1;}
     .note{ color:#ff7f50;}
+    /*******************************/
+    .tlist {
+        width:90%;
+        margin:7px auto 0px;
+        font-family:Tahoma, Verdana, Arial,;
+        border-bottom:1px solid #DDE7CC;
+        font-size: 12px;
+        /*	border-spacing:0px;*/
+        border-collapse:collapse;
+    }
+    .tlist tbody tr th {
+        line-height:19px;
+        background:#F7FAF3;
+        border-top:1px solid #E1EBCE;
+        border-bottom:1px solid #E1EBCE;
+        font-weight:normal;
+        color:#9CB085;
+        text-indent:7px;
+        padding-right:10px;
+        height:19px;
+    }
+    .tlist tbody tr th.ta_r {
+        text-align:right;
+    }
+    .tlist tbody tr td {
+        line-height:15px;
+        padding:6px;
+        /* border-bottom:1px solid #F3F3F3; */
+        color:#555;
+    }
+    .tlist tfoot tr td {
+        padding:5px 0px 7px 10px;
+    }
+    .tlist a{ text-decoration: none; color:#307526 ;}
+    button.btn1s {
+        height:19px;
+        padding-left:3px;
+        padding-right:3px;
+        font-size:12px;
+        line-height:17px;
+        color:#333;
+        border:1px solid #88AC44;
+        background:url(../images/button_bg1.jpg) left center repeat-x;
+        cursor:pointer;
+    }
+    /*****分页***/
+    .pagelist{
+        width: 90%;
+        margin: 0 auto;
+        text-align: right;
+    }

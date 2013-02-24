@@ -52,9 +52,14 @@
 class MY_Controller extends CI_Controller
 {
     public $_AdminPath = CFG_CMSPATH;
+    protected  $_data;//传入视图的数据
+    protected  $_model;
+    protected  $viewPath;//视图路径
+    protected  $where = array();//查询条件
     public function __construct(){
         parent::__construct();
       //  $this->config->load('config_string');//载入系统配置字符串
+        $this->load->library('pagination');
     }
 
     /**

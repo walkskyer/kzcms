@@ -9,7 +9,6 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
  */
 class admin extends MY_Controller
 {
-    private $_data = array();
 
    public function index(){
 

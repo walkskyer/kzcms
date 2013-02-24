@@ -3,11 +3,9 @@ if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class sysconfig extends  MY_Controller{
 
-    protected  $_data=array();
-    protected  $_model='sysconfig';
-    protected  $_viewPath;
     public   function  __construct(){
         parent::__construct();
+        $this->_model = 'sysconfig';
         $this->load->model($this->_model.'_model','model');
         $this->_viewPath = $this->_AdminPath.$this->_model.'/';
 
