@@ -40,7 +40,7 @@
  * @property CI_Upload $upload
  * @property CI_URI $uri
  * @property CI_User_agent $user_agent
- * @property CI_Validation $validation
+ * @property CI_Validation $form_validation
  * @property CI_Xmlrpc $xmlrpc
  * @property CI_Xmlrpcs $xmlrpcs
  * @property CI_Zip $zip
